@@ -5,10 +5,8 @@
 	<form method="POST" class="form-signin" style="width: 300px; padding: 20px; border: 1px solid #00000033; border-radius: 5px; margin: 0 auto;">
 		<h2>Login:</h2>
 		{{ form.hidden_tag() }}
-		{{ form.username.label(class_="input-block-level") }}
 		{{ form.username(class_='form-control', placeholder='Usuário ou e-mail') }}
 		<br>
-		{{ form.password.label(class_='input-block-level') }}
 		{{ form.password(class_='form-control', placeholder='Informe a sua senha') }}
 		<br>
 		{{ form.submit(class_="btn btn-large btn-primary") }}
