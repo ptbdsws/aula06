@@ -38,16 +38,7 @@ def main():
     remote_addr = request.remote_addr
     host = request.host
     print("Sessão atual: ", dict(session))
-    return render_template('index.html',
-    form=form,
-    name=session.get('name'),
-    last_name=session.get('last_name'),
-    institution=session.get('institution'),
-    course=session.get('course'),
-    remote_addr=remote_addr,
-    host=host,
-    current_time=datetime.utcnow()
-    )
+    return render_template('index.html', form=form, name=session.get('name'), last_name=session.get('last_name'), institution=session.get('institution'), course=session.get('course'), remote_addr=remote_addr, host=host, current_time=datetime.utcnow())
 
 
 @app.route('/login', methods=['GET', 'POST'])
