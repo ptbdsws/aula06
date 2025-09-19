@@ -1,0 +1,34 @@
+{% extends "base_template.html" %}
+
+{% block page_content %}
+    <section>
+		<h1>Olá, {% if name and last_name %}{{ name + ' ' + last_name }}{% else %}Estranho{% endif %}!</h1>
+		<h3>A sua instituição de ensino é {{ institution }}</h3>
+		<h3>Está cursando a disciplina de {{ course }}</h3>
+		<br>
+		<h4>O IP do computador remoto é: {{ remote_addr }}</h4>
+		<h4>O host da aplicação é: {{ host }}</h4>
+        <hr>
+    </section>
+    <div class="form-group required">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label(class_="control-label") }}
+            {{ form.name(class_='form-control') }}
+			<br>
+			{{ form.last_name.label(class_='control-label') }}
+			{{ form.last_name(class_='form-control') }}
+			<br>
+			{{ form.institution.label(class_='control-label') }}
+			{{ form.institution(class_='form-control') }}
+			<br>
+			{{ form.course.label(class_='control-label') }}
+			{{ form.course(class_='form-control') }}
+			<br>
+            {{ form.submit(class_="btn btn-default") }}
+        </form>
+    </div>
+	<br>
+	<p>The local date and time is {{ moment(current_time).format('LLL') }}</p>
+	<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}

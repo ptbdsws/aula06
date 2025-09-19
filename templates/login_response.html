@@ -1,0 +1,9 @@
+{% extends "base_template.html" %}
+
+{% block page_content %}
+	<h1>Dados de acesso</h1>
+	<hr>
+	<h3>Você está acessando o sistema por meio do usuário {{ username }}</h3>
+	<p>The local date and time is {{ moment(current_time).format('LLL') }}</p>
+	<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}
