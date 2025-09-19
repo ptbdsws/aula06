@@ -34,7 +34,7 @@ def main():
         session['last_name'] = form.last_name.data
         session['institution'] = form.institution.data
         session['course'] = form.course.data
-        return redirect(url_for('index'))
+        return redirect(url_for('main'))
     remote_addr = request.remote_addr
     host = request.host
     print("Sessão atual: ", dict(session))
